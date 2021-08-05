@@ -3,7 +3,27 @@ html {
 }
 
 body {
-  background: #F9F8FD !important;
+  background: #f9f8fd !important;
   margin: 0;
-  padding: 0;  
+  padding: 0;
+}
+
+.alert-error-form {
+  margin-top: 20px !important;
+}
+
+.select-form-task {
+  width: 200px;
+}
+
+.task-container {
+  padding: 20px 0;
+}
+
+.tasks-content {
+  margin-top: 50px !important;
+}
+
+.header-task {
+  margin-top: 0 !important;
 }
