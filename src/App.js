@@ -4,18 +4,18 @@ import { useState, useEffect } from "react";
 
 import Container from "./components/Container";
 import Header from "./components/Header";
-import InputTask from "./components/InputTask/InputTask";
+import InputTask from "./components/InputTask";
 import TasksContent from "./components/TasksContent";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-
-  // TODO: Pasar las citas a localstorage
+  // pasar las citas a localstorage
   let initialTasks = JSON.parse(localStorage.getItem("tasks"));
-  console.log(initialTasks);
+
   if (!initialTasks) {
     initialTasks = [];
   }
+
+  const [tasks, setTasks] = useState(initialTasks);
 
   useEffect(() => {
     if (initialTasks) {
@@ -23,9 +23,7 @@ function App() {
     } else {
       localStorage.setItem("tasks", JSON.stringify([]));
     }
-    console.log(initialTasks);
-  }, [tasks]);
-  // END TODO
+  }, [initialTasks, tasks]);
 
   // Crear las tareas
   const createTask = (task) => {
